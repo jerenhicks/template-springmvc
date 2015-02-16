@@ -87,6 +87,48 @@ To CREATE NEW MAVEN SPRING PROJECT:
 			org.springframework.web.context.ContextLoaderListener
 		</listener-class>
 	</listener>
+	
+- Set up JPA
+	- Install postgres 9.
+	- Add the following to the pom.xml
+	<postgres.version>9.3-1103-jdbc41</postgres.version>
+	<hibernate.version>4.3.8.Final</hibernate.version>
+	<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>${postgres.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	- Add hibernate.properties to the src folder:
+		hibernate.connection.driver_class = org.postgresql.Driver
+		hibernate.connection.url = jdbc:postgresql://localhost:5432/nuhuh
+		hibernate.connection.username = postgres
+		hibernate.connection.password = Ashley5659!
+		hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+		hibernate.current_session_context_class=thread
+	-Add hibernate.cfg.xml to src folder:
+		<?xml version="1.0" encoding="utf-8"?>
+			<!DOCTYPE hibernate-configuration PUBLIC
+			"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+			"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+			
+			<hibernate-configuration>
+				<session-factory>
+					<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+					<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/nuhuh</property>
+					<property name="hibernate.connection.username">postgres</property>
+					<property name="hibernate.connection.password">Ashley5659!</property>
+					<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+					<property name="show_sql">true</property>
+					<property name="format_sql">true</property>
+					<property name="hbm2ddl.auto">create</property>
+				</session-factory>
+			</hibernate-configuration>
+	
 
 - Add Server
 	- Click on the servers tab.
@@ -104,3 +146,8 @@ To CREATE NEW MAVEN SPRING PROJECT:
 	- Go to bitbucket.
 	- Click 'Create' and fill in info.
 	- Click the 'I have an existing project' and copy the code and execute it in terminal.
+	
+- Set up to send datas via postman
+	- set to post
+	- click x-www-form-urlencoded on the presets.
+	- set the values in the fields.
