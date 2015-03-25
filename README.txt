@@ -19,14 +19,6 @@ To CREATE NEW MAVEN SPRING PROJECT:
 - Set up Spring MVC
 	- Go to the pom.xml
 	- Lookup the spring mvc maven information. This is an example:
-
-```
-#!java
-hello
-
-```
- 
-
   <properties>
  <spring.version>4.0.1.RELEASE</spring.version>
  </properties>
