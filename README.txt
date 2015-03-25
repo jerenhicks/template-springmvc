@@ -19,7 +19,11 @@ To CREATE NEW MAVEN SPRING PROJECT:
 - Set up Spring MVC
 	- Go to the pom.xml
 	- Lookup the spring mvc maven information. This is an example:
-   <properties>
+ 
+```
+#!xml
+
+  <properties>
  <spring.version>4.0.1.RELEASE</spring.version>
  </properties>
   <dependencies>
@@ -47,6 +51,8 @@ To CREATE NEW MAVEN SPRING PROJECT:
 			<version>${spring.version}</version>
 		</dependency>
   </dependencies>
+```
+
 	- Right click the project, Maven -> Update Project.
 	- Right click the project, Run as -> Maven install
 	- Create dispatcher-servlet.xml in WebContent/WEB-INF
