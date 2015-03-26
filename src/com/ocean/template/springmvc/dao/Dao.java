@@ -1,4 +1,4 @@
-package com.ocean.nuhuh.dao;
+package com.ocean.template.springmvc.dao;
 
 import java.util.List;
 import java.util.UUID;
